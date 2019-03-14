@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width" />
+<title>Hello Spring Boot</title>
+<link th:href="@{/webjars/bootstrap/css/bootstrap.min.css}"
+rel="stylesheet"/>
+<link th:href="@{/webjars/bootstrap/css/bootstrap-theme.min.css}"
+rel="stylesheet"/>
+</head>
+<body>
+
+
+<div class="panel panel-default" style="margin: 10px">
+		<div class="panel-heading">
+			<h1 class="panel-title">Previsão do tempo</h1>
+		</div>
+		<div class="panel-body">
+			<table class="table">
+				<thead>
+					<tr>
+						<th>Dia da semana</th>
+						<th>Temperatura miníma</th>
+						<th>Temperatura máxima</th>
+						<th>Humidade relativa</th>
+						<th>Descrição</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr th:each="tempo : ${tempos}">
+						<td th:text="${tempos.nomeDoDiaDaSemana}"></td>
+						<td th:text="${tempos.temperaturaMinima}"></td>
+						<td th:text="${tempos.temperaturaMaxima}"></td>
+						<td th:text="${tempos.humidadeRelativaDoAr}"></td>
+						<td th:text="${tempos.descricao}"></td>
+						
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+</body>
+</html>
